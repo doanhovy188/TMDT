@@ -15,7 +15,7 @@ const BoxContainer = styled.div`
   flex-direction: column;
   border-radius: 19px;
   background-color: #fff;
-  box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
+  box-shadow: 20px 10px 10px rgba(2, 128, 144, 0.2);
   position: relative;
   overflow: hidden;
 `;
@@ -26,7 +26,7 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0 1.8em;
+//   padding: 0 1.8em;
   padding-top: 20px;
 `;
 
@@ -44,8 +44,9 @@ const HeaderText = styled.h2`
     margin: 0;
     z-index: 20;
     font-family: asap, sans-serif;
-    padding-left: 35px;
-    // text-align: center;
+    // padding-left: 35px;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const SmallText = styled.h3`
@@ -57,26 +58,23 @@ const SmallText = styled.h3`
   z-index: 10;
   margin: 10;
   margin-top: 7px;
+  justify-content: center;
   align-items: center;
-  margin-left: 70px;
 `;
 
-const LoginBtn = styled.button`
-    background-color: #FF725E;
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-`;
 
 const ColoredLine = ({ color }) => (
     <hr
         style={{
             color: color,
             backgroundColor: color,
-            height: 1,
+            height: 0.5,
             width: '60px',
-            marginLeft: '79px',
-            marginTop: '20px'
+            // marginLeft: '79px',
+            display: 'flex',
+            alignItems: 'center',
+            // margin: 'auto',
+            marginTop: '30px',
         }}
     />
 );
@@ -84,11 +82,15 @@ const ColoredLine = ({ color }) => (
 const useStyles = makeStyles({
     login: {
         // marginLeft: '60px',
+        display: 'flex',
         marginTop: '20px',
         borderRadius: "5em",
         //color: '#fff',
         background: '#FF725E',
-        width: '76%'
+        width: '76%',
+        boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.25)',
+        textAlign: 'center',
+        margin: 'auto'
     },
     forgot: {
         fontSize: '10px',
@@ -102,10 +104,14 @@ const useStyles = makeStyles({
     register: {
         margin: '0',
         color: '#FF725E',
-        marginLeft: '10px'
+        marginLeft: '10px',
+        textTransform: 'none',
+    },
+    shadow: {
+        filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.25))'
     }
-})
 
+})
 
 export function AccountBox(props) {
     const classes =  useStyles();
@@ -116,7 +122,7 @@ export function AccountBox(props) {
                     <HeaderText> Welcome to </HeaderText>
                     <Typography>
                         <Box sx={{marginTop: '10px' }}>
-                            <Custom/>
+                            <Custom className={classes.shadow}/>
                         </Box>
                         <Box sx={{marginTop: '20px' }}>
                             <Password/>
@@ -127,8 +133,8 @@ export function AccountBox(props) {
                         </Button>
                     </Typography>
                     <ColoredLine color='black'/>
-                    <SmallText > Are you new? 
-                        <Button className={classes.register} href="#text-buttons">Register</Button>
+                    <SmallText href="google.com" > Are you new? 
+                        <Button className={classes.register} href="./src/register.js">Register</Button>
                     </SmallText>
                 </HeaderContainer>  
             </TopContainer>

@@ -9,7 +9,7 @@ export default function CustomizedInputBase() {
   return (
     <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 220, borderRadius: '5em' }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 220, borderRadius: '25px', boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.25)', margin: 'auto' }}
     >
       <IconButton sx={{ p: '10px' }} aria-label="menu">
         <VpnKey sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
