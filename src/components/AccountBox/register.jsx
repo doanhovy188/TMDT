@@ -7,6 +7,7 @@ import UnstyledUser from './unStyledUser';
 import Custom from './search';
 import Password from './password';
 
+
 const BoxContainer = styled.div`
   width: 100%;
   min-height: 450px;
@@ -112,28 +113,30 @@ const useStyles = makeStyles({
 
 })
 
-export function AccountBox(props) {
+export function RegisterBox(props) {
     const classes =  useStyles();
     return (
         <BoxContainer>
             <TopContainer>
                 <HeaderContainer>
-                    <HeaderText> Welcome to </HeaderText>
+                    <HeaderText> Register </HeaderText>
                     <Typography>
                         <Box sx={{marginTop: '10px' }}>
-                            <Custom name="Username" />
+                            <UnstyledUser name="Username" />
                         </Box>
                         <Box sx={{marginTop: '20px' }}>
-                            <Password name="Password"/>
+                            <UnstyledUser name="Password"/>
                         </Box>
-                        <Button className={classes.forgot} href="#text-buttons">Forgot password ?</Button>
+                        <Box sx={{marginTop: '20px' }}>
+                            <UnstyledUser name="Confirm password"/>
+                        </Box>
                         <Button className={classes.login} variant="outlined" size="large">
-                            Login
+                            Next
                         </Button>
                     </Typography>
                     <ColoredLine color='black'/>
-                    <SmallText href="google.com" > Are you new? 
-                        <Button className={classes.register} href="./src/register.js">Register</Button>
+                    <SmallText href="google.com" > Already have an account ?
+                        <Button className={classes.register} href="#">Back to Login</Button>
                     </SmallText>
                 </HeaderContainer>  
             </TopContainer>

@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton';
 
 import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
 
-export default function CustomizedInputBase() {
+export default function CustomizedInputBase(props) {
   return (
     <Paper
       component="form"
@@ -16,7 +16,7 @@ export default function CustomizedInputBase() {
       </IconButton>
       <InputBase
         sx={{ ml: 0.5, flex: 0.5 }}
-        placeholder="Password"
+        placeholder={props.name}
         inputProps={{ 'aria-label': 'Password' }}
       />
     </Paper>

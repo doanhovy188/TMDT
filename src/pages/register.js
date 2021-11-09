@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from "styled-components";
-import useStyle from './components/Navbar/styles';
-import Navbar from './components/Navbar/Navbar';
-import { AccountBox } from './components/AccountBox';
-import pic from './assets/Image/Growth curve-pana.png';
-
+import userStyle from '../components/Navbar/styles';
+import Navbar from '../components/Navbar/Navbar';
+// import { AccountBox } from '../components/AccountBox';
+import pic from '../assets/Image/Growth curve-pana.png';
+import { RegisterBox } from '../components/AccountBox/register';
 
 const Background = styled.div`
+    width : 100%;
+    height: 100%;
     background-image: linear-gradient(232.5deg, #68DBFF -18.69%, #63FCD1 86.96%);
+    background-size: cover;
 `;
 
 const Container = styled.div`
     width: auto;
     height: 100%;
-    max-width: 1540px;
+    //max-width: 1540px;
     margin: 0 auto;
     padding: 0 50px;
     display: flex;
@@ -35,20 +38,23 @@ const BoxPic = styled.div`
 `;
 
 
-const App2 = () => {
-    const classes = useStyle();
+
+const Register = () => {
+    // const classes = useStyle();
     return (
-        <div>
+        <div style={{ height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'hidden'}}>
+            <Background>
                 <Navbar />
-                <Background>
                     <Container>
+                        <BoxPic>
+                            <img src={pic} width='650px' />
+                        </BoxPic>
                         <AppContainer>
-                            <AccountBox />
+                            <RegisterBox />
                         </AppContainer>
                     </Container>
                 </Background>
         </div>
     )
 }
-
-export default App2;
+export default Register;

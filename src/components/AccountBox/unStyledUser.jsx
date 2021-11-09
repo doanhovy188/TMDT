@@ -3,6 +3,8 @@ import InputUnstyled from '@mui/core/InputUnstyled';
 import { styled } from '@mui/system';
 
 const StyledInputElement = styled('input')`
+  display: flex;
+  margin: 0 auto;
   width: 200px;
   font-size: 1rem;
   font-family: IBM Plex Sans, sans-serif;
@@ -29,6 +31,6 @@ const CustomInput = React.forwardRef(function CustomInput(props, ref) {
   );
 });
 
-export default function UnstyledInput() {
-  return <CustomInput aria-label="Demo input" placeholder="Username" />;
+export default function UnstyledInput(props) {
+  return <CustomInput aria-label="Demo input" placeholder={props.name} />;
 }
