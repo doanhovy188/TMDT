@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import {TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment} from '@material-ui/core';
+import { TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment } from '@material-ui/core';
 import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
 import { fabClasses } from '@mui/material';
 import UnstyledUser from './unStyledUser';
 import Custom from './search';
 import Password from './password';
+import { useState } from 'react';
+import './style.css';
 
 const BoxContainer = styled.div`
   width: 100%;
@@ -69,10 +71,8 @@ const ColoredLine = ({ color }) => (
             backgroundColor: color,
             height: 0.5,
             width: '60px',
-            // marginLeft: '79px',
             display: 'flex',
             alignItems: 'center',
-            // margin: 'auto',
             marginTop: '30px',
         }}
     />
@@ -80,11 +80,9 @@ const ColoredLine = ({ color }) => (
 
 const useStyles = makeStyles({
     login: {
-        // marginLeft: '60px',
         display: 'flex',
         marginTop: '20px',
         borderRadius: "5em",
-        //color: '#fff',
         background: '#FF725E',
         width: '76%',
         boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.25)',
@@ -112,30 +110,73 @@ const useStyles = makeStyles({
 
 })
 
+
 export function AccountBox(props) {
-    const classes =  useStyles();
+    const classes = useStyles();
+
+    const admin ={
+        user: 'admin',
+        pass: '123',
+    }
+
+    const [pass, setPass] = useState('');
+    const [user, setUser] = useState('');
+
+    function handleUserInput(e) {
+        setUser(e.target.value);
+    }
+    function handlePassInput(e) {
+        setPass(e.target.value);
+    }
+
+    function handleSubmit()
+    {
+        console.log('User:' + user);
+        console.log('Pass:' + pass);
+
+        if(user == admin.user && pass == admin.pass)
+            console.log("Login");
+    }
     return (
         <BoxContainer>
             <TopContainer>
                 <HeaderContainer>
                     <HeaderText> Welcome to </HeaderText>
                     <Typography>
-                        <Box sx={{marginTop: '10px' }}>
-                            <Custom name="Username" />
+                        <Box sx={{ marginTop: '10px' }}>
+                        <div className="boxPassword">
+                                <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /> </figure>
+                                <input
+                                    type="text"
+                                    className="passwordInput"
+                                    placeholder = "User"
+                                    value={user}
+                                    onChange={handleUserInput}
+                                />
+                            </div>
                         </Box>
-                        <Box sx={{marginTop: '20px' }}>
-                            <Password name="Password"/>
+                        <Box sx={{ marginTop: '20px' }}>
+                            <div className="boxPassword">
+                                <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /> </figure>
+                                <input
+                                    type="password"
+                                    className="passwordInput"
+                                    placeholder = "Password"
+                                    value={pass}
+                                    onChange={handlePassInput}
+                                />
+                            </div>
                         </Box>
                         <Button className={classes.forgot} href="#text-buttons">Forgot password ?</Button>
-                        <Button className={classes.login} variant="outlined" size="large">
+                        <Button className={classes.login} onClick={handleSubmit} variant="outlined" size="large">
                             Login
                         </Button>
                     </Typography>
-                    <ColoredLine color='black'/>
-                    <SmallText href="google.com" > Are you new? 
-                        <Button className={classes.register} href="./src/register.js">Register</Button>
+                    <ColoredLine color='black' />
+                    <SmallText href="google.com" > Are you new?
+                        <Button className={classes.register} href="/register">Register</Button>
                     </SmallText>
-                </HeaderContainer>  
+                </HeaderContainer>
             </TopContainer>
         </BoxContainer>
     );

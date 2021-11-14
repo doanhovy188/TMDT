@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
-import {TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment} from '@material-ui/core';
-import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
-import { fabClasses } from '@mui/material';
+import {TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment, Al} from '@material-ui/core';
 import UnstyledUser from './unStyledUser';
 import Custom from './search';
 import Password from './password';
-
+import {Render} from '../Annoucement/Annoucement';
 
 const BoxContainer = styled.div`
   width: 100%;
@@ -113,7 +111,7 @@ const useStyles = makeStyles({
 
 })
 
-export function RegisterBox(props) {
+export function RegisterDetailBox(props) {
     const classes =  useStyles();
     return (
         <BoxContainer>
@@ -122,19 +120,19 @@ export function RegisterBox(props) {
                     <HeaderText> Register </HeaderText>
                     <Typography>
                         <Box sx={{marginTop: '10px' }}>
-                            <UnstyledUser name="Username" />
+                            <UnstyledUser name="Fullname" />
                         </Box>
                         <Box sx={{marginTop: '20px' }}>
-                            <UnstyledUser name="Password"/>
+                            <UnstyledUser name="Email"/>
                         </Box>
                         <Box sx={{marginTop: '20px' }}>
-                            <UnstyledUser name="Confirm password"/>
+                            <UnstyledUser name="Phone Number"/>
                         </Box>
-                        <Button className={classes.login} href="/registerDetail" variant="outlined" size="large">
-                            Next
+                        <Button className={classes.login} variant="outlined" size="large">
+                            Register
                         </Button>
+                        
                     </Typography>
-                    <ColoredLine color='black'/>
                     <SmallText href="google.com" > Already have an account ?
                         <Button className={classes.register} href="/">Back to Login</Button>
                     </SmallText>

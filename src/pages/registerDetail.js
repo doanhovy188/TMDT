@@ -4,7 +4,7 @@ import userStyle from '../components/Navbar/styles';
 import Navbar from '../components/Navbar/Navbar';
 // import { AccountBox } from '../components/AccountBox';
 import pic from '../assets/Image/Growth curve-pana.png';
-import { RegisterBox } from '../components/AccountBox/register';
+import {RegisterDetailBox} from '../components/AccountBox/registerDetail';
 
 const Background = styled.div`
     width : 100%;
@@ -39,7 +39,7 @@ const BoxPic = styled.div`
 
 
 
-const Register = () => {
+const RegisterDetail = () => {
     // const classes = useStyle();
     return (
         <div style={{ height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'hidden'}}>
@@ -50,12 +50,11 @@ const Register = () => {
                             <img src={pic} width='650px' />
                         </BoxPic>
                         <AppContainer>
-                            <RegisterBox />
+                            <RegisterDetailBox />
                         </AppContainer>
                     </Container>
                 </Background>
-                
         </div>
     )
 }
-export default Register;
+export default RegisterDetail;

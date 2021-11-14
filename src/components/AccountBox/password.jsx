@@ -2,11 +2,19 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
-
+import './style.css'
 import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
 
 export default function CustomizedInputBase(props) {
   return (
+    // <div className="boxPassword">
+    //   <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /></figure>
+    //   <input 
+    //     type="text" 
+    //     className="passwordInput"
+    //     value ={}
+    //     />
+    // </div>
     <Paper
       component="form"
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 220, borderRadius: '25px', boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.25)', margin: 'auto' }}
