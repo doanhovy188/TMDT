@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import { TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment } from '@material-ui/core';
 import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
@@ -7,7 +7,7 @@ import UnstyledUser from './unStyledUser';
 import Custom from './search';
 import Password from './password';
 import { useState } from 'react';
-import './style.css';
+import styles from './style.module.css';
 
 const BoxContainer = styled.div`
   width: 100%;
@@ -144,11 +144,11 @@ export function AccountBox(props) {
                     <HeaderText> Welcome to </HeaderText>
                     <Typography>
                         <Box sx={{ marginTop: '10px' }}>
-                        <div className="boxPassword">
+                        <div className={styles.boxPassword}>
                                 <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /> </figure>
                                 <input
                                     type="text"
-                                    className="passwordInput"
+                                    className={styles.passwordInput}
                                     placeholder = "User"
                                     value={user}
                                     onChange={handleUserInput}
@@ -156,11 +156,11 @@ export function AccountBox(props) {
                             </div>
                         </Box>
                         <Box sx={{ marginTop: '20px' }}>
-                            <div className="boxPassword">
+                            <div className={styles.boxPassword}>
                                 <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /> </figure>
                                 <input
                                     type="password"
-                                    className="passwordInput"
+                                    className={styles.passwordInput}
                                     placeholder = "Password"
                                     value={pass}
                                     onChange={handlePassInput}

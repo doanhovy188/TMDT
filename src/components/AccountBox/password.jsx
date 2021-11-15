@@ -2,7 +2,7 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
-import './style.css'
+import styles from './style.module.css';
 import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
 
 export default function CustomizedInputBase(props) {
