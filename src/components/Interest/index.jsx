@@ -1,9 +1,5 @@
 import React from 'react';
 import styles from './interest.module.css';
-<link rel="preconnect" href="https://fonts.googleapis.com"/>;
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>;
-<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet"></link>;
-
 
 export function InterestBox() {
 
@@ -12,7 +8,7 @@ export function InterestBox() {
             <h2 className={styles.topic}> Interest Rate (%/year) </h2>
             <table className={styles.tableInterest}>
                 <tr>
-                    <td>Term</td>
+                    <td className={styles.topicTable}>Term</td>
                     <td>1 m</td>
                     <td>2 m</td>
                     <td>3 m</td>
@@ -23,7 +19,7 @@ export function InterestBox() {
                     
                 </tr>
                 <tr>
-                    <td>Maturity interest</td>
+                    <td className={styles.topicTable}>Maturity interest</td>
                     <td>3.5</td>
                     <td>3.6</td>
                     <td>3.7</td>
@@ -33,7 +29,7 @@ export function InterestBox() {
                     <td>6.1</td>
                 </tr>
                 <tr>
-                    <td>Monthly interest</td>
+                    <td className={styles.topicTable}>Monthly interest</td>
                     <td> &nbsp; </td>
                     <td>3.4</td>
                     <td>3.5</td>
