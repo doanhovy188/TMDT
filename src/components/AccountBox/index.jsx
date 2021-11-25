@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TextField, Typography, Box, Button, makeStyles, IconButton, InputAdornment } from '@material-ui/core';
+import { AccountCircle, VpnKey, Search } from '@material-ui/icons';
+import { fabClasses } from '@mui/material';
+import UnstyledUser from './unStyledUser';
+import Custom from './search';
+import Password from './password';
 import { useState } from 'react';
 import styles from './style.module.css';
-import {fas} from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const BoxContainer = styled.div`
   width: 100%;
@@ -142,8 +145,7 @@ export function AccountBox(props) {
                     <Typography>
                         <Box sx={{ marginTop: '10px' }}>
                         <div className={styles.boxPassword}>
-                                <figure className="key">  </figure>
-                                {/* <FontAwesomeIcon icon={['fab', 'google']} /> */}
+                                <figure className="key"> <img src="../assets/flag-vn.png" alt="flag" /> </figure>
                                 <input
                                     type="text"
                                     className={styles.passwordInput}
